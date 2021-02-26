@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
+    <title>SpaceX</title>
+</head>
+
+    
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+        
+        // global options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777';
+        
+        let massPopChart = new Chart(myChart, {
+            type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+                datasets:[{
+                    label: 'Population',
+                    data: [
+                        617594,
+                        124342,
+                        124124,
+                        352535,
+                        235325,
+                        12414
+                    ],
+                  //  backgroundColor: 'green',
+                    backgroundColor: [
+                        'green',
+                        'red',
+                        'blue',
+                        'purple',
+                        'yellow',
+                        'red'
+                    ],
+                    borderWidth:1,
+                    borderColor:'gray',
+                    hoverBorderWidth:3,
+                    hoverBorderColor: 'black'
+                }]
+                
+            },
+            options: {
+                title: {
+                    display:true,
+                    text:'Largest cities in Massachusetts',
+                    fontSize: 25,
+                },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                        fontColor: 'black'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+            }
+            }
+        });
+    
+    
+    </script>
+</body>
+
+</html>

@@ -1,17 +1,230 @@
 <!DOCTYPE html>
-<html lang="nl">
-	<head>
-		<meta charset="UTF-8" />
-		<title>gerrit</title>
-		<link type="text/css" href="styles/my_style.css" rel="stylesheet" />
-		<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="scripts/my_scripts.js"></script>
-	</head>
-	<body>
-		<section id="woonkamer">
-			<img id="background" src="images/background.jpg" />
-			<img id="gerrit" src="images/gerrit.png" />
-		</section>
-		<p>Spongebob Squarepants, Nickelodeon Animation Studios 1999</p>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
+    <title>SpaceX</title>
+</head>
+    
+<body>
+    <nav>
+        <img id="spacexlogo" src="images/spacexWhite.png" alt="SpaceX logo">
+        
+    </nav> 
+    
+    
+    <main>
+    </main>
+    
+        <div class="container">
+            <canvas id="foodChart"></canvas>
+        </div>
+
+        <div class="container">
+        <canvas id="fuelChart"></canvas>
+        </div>
+    
+        <div class="container">
+            <canvas id="speedChart"></canvas>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+    Chart.defaults.global.defaultFontFamily = 'Bahnschrift';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+    
+    let foodChart = document.getElementById('foodChart').getContext('2d');
+    
+    
+    let fuelChart = document.getElementById('fuelChart').getContext('2d');
+    
+    let speedChart = document.getElementById('speedChart').getContext('2d');
+    
+    // chart for the food 
+    let foodKindChart = new Chart(foodChart, {
+        type: 'pie', 
+            data: {
+                labels:['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Fruits'],
+                datasets:[{
+                    label: 'food in grams',
+                    data: [
+                        1500,
+                        1230,
+                        5002,
+                        300,
+                        708
+                    ],
+                  //  backgroundColor: 'green',
+                    backgroundColor: [
+                        'green',
+                        'red',
+                        'blue',
+                        'purple',
+                        'yellow'
+                    ],
+                    borderWidth:1,
+                    borderColor:'gray',
+                    hoverBorderWidth:3,
+                    hoverBorderColor: 'gray'
+                }]   
+            },
+        options: {
+                title: {
+                    display:true,
+                    text:'Food in grams',
+                    fontSize: 25,
+                },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                        fontColor: 'black'
+                    }
+                },
+                tooltips:{
+                    enabled:true
+            }
+            }
+    });
+    
+    let fuelDistanceChart = new Chart(fuelChart, {
+        type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels:[100, 200, 300, 400, 500],
+                datasets:[{
+                    label: 'distance',
+                    data: [
+                        120,
+                        140,
+                        150,
+                        180,
+                        200
+                        
+                    ],
+                    
+                    backgroundColor: '#BA1E68',
+                    borderWidth:1,
+                    borderColor:'gray',
+                    hoverBorderWidth:3,
+                    hoverBorderColor: '#2D0043'
+                }]   
+            },
+        options: {
+                title: {
+                    display:true,
+                    text:'How much distance fuel can give you',
+                    fontSize: 25,
+                },
+                legend:{
+                    display:false,
+                    position:'right',
+                    labels:{
+                        fontColor: 'black'
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                },
+            scales: {
+				    xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Distance in KM'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Fuel in L'
+						}
+                    }]
+            }
+        }
+                            
+    });
+    
+    let speedDistanceChart = new Chart(speedChart, {
+        type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels:[100, 200, 300, 400, 500],
+                datasets:[{
+                    label: 'distance',
+                    data: [
+                        10,
+                        20,
+                        30,
+                        40,
+                        50
+                        
+                    ],
+                    
+                    backgroundColor: '#BA1E68',
+                    borderWidth:1,
+                    borderColor:'gray',
+                    hoverBorderWidth:3,
+                    hoverBorderColor: '#2D0043'
+                }]   
+            },
+        options: {
+                title: {
+                    display:true,
+                    text:'How long it takes to travel certain distances',
+                    fontSize: 25,
+                },
+                legend:{
+                    display:false,
+                    position:'right',
+                    labels:{
+                        fontColor: 'black'
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                },
+            scales: {
+				    xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Distance in KM'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Time in Hours'
+						}
+                    }]
+            }
+        }
+                            
+    });
+    
+    
+    
+    
+    
+    
+</script>
+    
+</body>
+    
+
+    
+    
+    
+    
+    
+    
 </html>
