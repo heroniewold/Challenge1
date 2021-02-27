@@ -1,0 +1,66 @@
+@font-face {
+   font-family: Golos; 
+   src: url('Golos.ttf');
+} 
+body {
+    margin: 0;
+    font-family: "Golos";
+}
+/* navigatie */
+#spacexlogo {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav {
+    width: 100%;
+    height: auto;
+    background-color: #BA1E68;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* grafieken */
+main {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* tablets */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 90%;
+        margin-top: 40px;   
+        margin-bottom: 40px;
+    }
+    #spacexlogo {
+        width: 30%;
+    }
+}
+
+/* small screens */
+@media screen and (min-width: 1224px) {
+    ..container {
+        width: 80%;
+        margin-top: 60px;   
+        margin-bottom: 60px;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1824px) {
+    .container {
+        width: 70%;
+        margin-top: 80px;   
+        margin-bottom: 80px;
+    }
+}
