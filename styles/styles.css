@@ -16,7 +16,7 @@ body {
 nav {
     width: 100%;
     height: auto;
-    background-color: #BA1E68;
+    background-color: #BA1E68; /* kleurcode van een pallet gebasseerd op de ruimte */
     padding-top: 10px;
     padding-bottom: 20px;
 }
@@ -38,7 +38,7 @@ main {
 /* tablets */
 @media screen and (min-width: 768px) {
     .container {
-        width: 90%;
+        width: 80%;
         margin-top: 40px;   
         margin-bottom: 40px;
     }
@@ -48,9 +48,9 @@ main {
 }
 
 /* small screens */
-@media screen and (min-width: 1224px) {
-    ..container {
-        width: 80%;
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 60%;
         margin-top: 60px;   
         margin-bottom: 60px;
     }
@@ -59,7 +59,7 @@ main {
 /* large screens */
 @media screen and (min-width: 1824px) {
     .container {
-        width: 70%;
+        width: 40%;
         margin-top: 80px;   
         margin-bottom: 80px;
     }
